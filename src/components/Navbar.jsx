@@ -21,7 +21,7 @@ const Navbar = () => {
         {/* Logo */}
         <div className="text-xl ">
           <Image
-            src="/images/logo.svg"
+            src="/images/Logo.svg"
             alt="Lahore Travel Tour"
             width={70}
             height={50}
