@@ -118,7 +118,7 @@ function PlaceCard({ place }) {
     <div className="bg-white rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden flex flex-col h-full">
 
       {/* Image */}
-      <div className="relative h-52 w-full overflow-hidden">
+      <div className="relative h-52 w-full">
         <Image
           src={place.image}
           alt={place.title}
@@ -134,8 +134,11 @@ function PlaceCard({ place }) {
       </div>
 
       {/* Content */}
-      <div className="p-5 flex flex-col flex-grow">
-        <h3 className="font-semibold text-lg text-gray-900">{place.title}</h3>
+      <div className="-mt-6 bg-white rounded-t-3xl p-5 flex flex-col flex-grow relative z-10">
+
+        <h3 className="font-semibold text-lg text-gray-900">
+          {place.title}
+        </h3>
 
         <div className="flex items-center gap-1 text-gray-400 text-sm mt-1">
           <MapPin size={14} />
@@ -158,6 +161,7 @@ function PlaceCard({ place }) {
             </span>
           ))}
         </div>
+
       </div>
 
     </div>
