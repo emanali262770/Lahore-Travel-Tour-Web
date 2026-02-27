@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, use } from "react";
 import axios from "axios";
 import Image from "next/image";
 import FilterSidebar from "./FilterSidebar";
+import { useRouter } from "next/navigation";
 
 const tours = [
   {
@@ -73,9 +74,9 @@ const ExplorePage = () => {
     : tours;
 
   const visibleTours = filteredTours.slice(0, 3);
-
+const router=useRouter()
   return (
-    <section className="bg-[#f6f6f6] py-14">
+    <section className="bg-lightblue py-14">
       <div className="max-w-[1200px] mx-auto px-6 flex flex-col items-start lg:flex-row gap-10">
 
         {/* LEFT FILTER */}
@@ -112,16 +113,16 @@ const ExplorePage = () => {
                     {tour.title}
                   </h3>
 
-                  <p className="text-sm text-gray-500 mt-1">
+                  <p className="text-sm text-grayish mt-1">
                     📍 {tour.location}
                   </p>
 
-                  <p className="text-gray-600 mt-3 text-sm">
+                  <p className="text-grayish mt-3 text-sm">
                     One of the most beautiful attractions in Lahore,
                     showcasing Mughal architecture and rich history.
                   </p>
 
-                  <button className="mt-4 border border-pink-400 text-pink-500 px-6 py-2 rounded-lg hover:bg-pink-100 transition">
+                  <button onClick={()=> router.push(`/explore-places/${tour.id}`)} className="mt-4 border cursor-pointer border-primary-mid text-primary px-6 py-2 rounded-lg hover:bg-secondary transition">
                     View Details
                   </button>
                 </div>
@@ -131,17 +132,17 @@ const ExplorePage = () => {
 
           {/* Pagination */}
           <div className="flex items-center justify-center gap-4 pt-6">
-            <button className="w-8 h-8 flex items-center justify-center rounded-full bg-pink-500 text-white">
+            <button className="w-8 h-8 flex items-center justify-center rounded-full bg-primary text-white">
               1
             </button>
-            <button className="w-8 h-8 rounded-full hover:bg-pink-200">
+            <button className="w-8 h-8 rounded-full hover:bg-secondary">
               2
             </button>
-            <button className="w-8 h-8 rounded-full hover:bg-pink-200">
+            <button className="w-8 h-8 rounded-full hover:bg-secondary">
               3
             </button>
             <span>...</span>
-            <button className="w-8 h-8 rounded-full hover:bg-pink-200">
+            <button className="w-8 h-8 rounded-full hover:bg-secondary">
               20
             </button>
           </div>

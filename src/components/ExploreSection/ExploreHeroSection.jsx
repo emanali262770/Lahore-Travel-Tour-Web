@@ -7,7 +7,7 @@ const ExploreHeroSection = () => {
     <section className="relative h-[786px]  w-full">
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0 bg-black bg-cover bg-center"
         style={{
           backgroundImage: "url('/images/explore.png')", // put your image inside public/images
         }}

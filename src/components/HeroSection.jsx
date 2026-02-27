@@ -10,7 +10,7 @@ const HeroSection = () => {
     <section className="relative h-[786px]  w-full">
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute bg-black inset-0 bg-cover bg-center"
         style={{
           backgroundImage: "url('/images/heroBanner.png')", // put your image inside public/images
         }}

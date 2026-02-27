@@ -39,3 +39,11 @@ body {
   --color-lightblue: #E8F1F1;              /* text-primary, bg-primary */
 
 }
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
