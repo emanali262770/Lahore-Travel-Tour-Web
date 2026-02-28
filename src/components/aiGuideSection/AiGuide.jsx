@@ -185,7 +185,7 @@ export default function AiGuide() {
               {["Under PKR 1000", "PKR 5000", "PKR 10000+"].map((option) => (
                 <button
                   key={option}
-                  onClick={() => setAnswers({ ...answers, budget: option })}
+                  onClick={() => setAnswers({ ...answers, budget: option, customBudget: "" })}
                   className={`px-4 sm:px-6 py-2 rounded-lg border text-sm sm:text-base transition ${
                     answers.budget === option
                       ? "bg-primary text-white"
@@ -206,6 +206,7 @@ export default function AiGuide() {
                 setAnswers({
                   ...answers,
                   customBudget: e.target.value,
+                    budget: "",
                 })
               }
             />
